@@ -155,3 +155,51 @@ Built by [Your Name] as part of a Streamlit learning journey. Inspired by solvin
 MIT License
 
 # ctrl + shift + P and select Python: Select Interpreter
+
+
+# also note
+
+🧠 Git Push Error: src refspec main does not match any
+❌ The Issue
+When trying to push my project to GitHub, I ran into this error:
+
+bash
+Copy
+Edit
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/yourusername/your-repo.git'
+This happens because Git tries to push a branch called main, but my local branch was actually named master (older Git versions default to master).
+
+✅ How I Solved It
+I ran this command to see my current branch:
+
+bash
+Copy
+Edit
+git branch
+It showed:
+
+markdown
+Copy
+Edit
+* master
+So I did either of the following:
+
+✔ Option 1: Push the master branch as it is
+bash
+Copy
+Edit
+git push -u origin master
+This pushed the project to GitHub successfully and made master the default branch.
+
+✔ Option 2 (optional): Rename master to main
+To align with modern Git naming conventions:
+
+bash
+Copy
+Edit
+git branch -m main
+git push -u origin main
+This renamed my branch locally and pushed it to GitHub under main.
+
+✅ Lesson: Always check your local branch name with git branch before pushing — especially when setting up a new repo.
