@@ -56,3 +56,4 @@ if st.button("Predict"):
         st.error("🚨 High risk: You are likely to have diabetes.")
     else:
         st.success("✅ Low risk: You are unlikely to have diabetes.")
+
